@@ -9,6 +9,7 @@
 <table class="table table-hover">
 
 
+	@if(isset($productos1))
 
 	<thead>
 		<th>Producto</th>
@@ -21,24 +22,47 @@
 
 		<tr>
 
-			<td>{{ $pp->name }}</td>
-			<td>{{ $pp->description }}</td>
-			<td>{{ $pp->price }}</td>
-			<td>
-				<img src="{{ $pp->photo1 }}" class="img-responsive" alt="Responsive image">
-			</td>
-			<td>{{ $pp->idUser }}</td>
+			<td>{{ $productos1->name }}</td>
+			<td>{{ $productos1->description }}</td>
+			<td>{{ $productos1->price }}</td>
+			<td><img src="../{{ $productos1->photo1 }}"></td>
+			<td>{{ $productos1->idUser }}</td>
 		</tr>
 		
-	@endforeach
 	</tbody>
 
 
 	@endif
 </table>
+
+
+<table class="table table-hover">
+	@if(isset($comentarios))
+
+	<thead>
+		<th>Commentario</th>
+		<th>Usuario</th>
+	</thead>
+
+	<tbody>
+
+	@foreach($comentarios as $c)
+		<tr>
+
+			<td>{{ $c->comment }}</td>
+			<td>{{ $c->idUser }}</td>
+		</tr>
+		
+		@endforeach
+	</tbody>
+
+
+	@endif
+</table>
+
+
 @else
 
-ttt
 
 @endif
 @endsection

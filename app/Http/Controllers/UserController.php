@@ -59,8 +59,9 @@ class UserController extends Controller
     public function show($id)
     {
         $usuario = \App\User::find($id)->first();
+        return $usuario;
 
-
+        //return view('user.profile')->with(['usuarios'=> $usuario ]);
     }
 
     /**

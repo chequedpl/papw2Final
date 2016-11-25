@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -15,8 +16,8 @@ class ProductController extends Controller
     {
         //return view('product.create');
         $producto = \App\Product::All();
-        //return $producto;
         return view('product.main')->with(['productos'=> $producto ]);
+        //return $producto;
     }
 
 
@@ -45,10 +46,21 @@ class ProductController extends Controller
     {
         //$productos = DB::query('select * from products where id= ?', [ 1 => $id]);
 
-        $productos1 = \App\Product::find($id)->first();
+        $productos = \App\Product::find($id);
         //return $productos;
-        //return response()->json($productos);
-        return view('product.ver')->with([ 'edit' => true ,'productos1' => $productos1 ]);
+        //$productos1 = response()->json($productos);
+        //$productos1 = $productos->name;
+        //return $productos->photo1;
+
+        $comentarios1 = \App\Comment::where('idProduct', $id)->get();
+
+        //$comentarios1 = DB::query('select * from comments where idProduct= ?', [ 1 => $id]);
+        
+        //$comentarios1 = response()->json($comentarios1);
+
+        //return $comentarios1;
+
+        return view('product.ver')->with([ 'edit' => true ,'productos1' => $productos, 'comentarios' => $comentarios1 ]);
     }
 
 

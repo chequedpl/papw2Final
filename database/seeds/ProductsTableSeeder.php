@@ -12,12 +12,20 @@ class ProductsTableSeeder extends Seeder
     public function run()
     {
         DB::table('products')->insert([
-     	'name' => 'Ezequiel Peña',
-      	'description' => 'Productos para Banquetes',
-      	'price' => '45000',
-      	'photo1'=> 'null',
+     	'name' => 'Bonice',
+      	'description' => 'ricos Bonice',
+      	'price' => '6',
+      	'photo1'=> 'Img/Boniceproducto1.png',
         'idUser'=>'1'
       	]);
+
+         DB::table('products')->insert([
+        'name' => 'cocacola',
+        'description' => '12 cajas de medio litro',
+        'price' => '7',
+        'photo1'=> 'Img/cocasproducto2.jpg',
+        'idUser'=>'1'
+        ]);
 
     }
 }
