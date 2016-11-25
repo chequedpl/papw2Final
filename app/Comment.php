@@ -12,5 +12,12 @@ class Comment extends Model
 	'comment','idUser', 'idProduct'
 	];
 
+   public function users(){
+    	return $this->belongsTo(User::class);
+    }
+
+    public function products(){
+    	return $this->belongsTo(Product::class);
+    }
 	
 }

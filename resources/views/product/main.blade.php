@@ -14,13 +14,15 @@
 
 	@foreach($productos as $p)
 		<tr>
-			<td>{{ $p->name }}</td>
+
+			<td><a href="product/{{ $p->id }}">{{ $p->name }}</a></td>
 			<td>{{ $p->description }}</td>
 			<td>{{ $p->price }}</td>
 			<td>
 				<img src="{{ $p->photo1 }}" class="img-responsive" alt="Responsive image">
 			</td>
 		</tr>
+		
 		@endforeach
 	</tbody>
 

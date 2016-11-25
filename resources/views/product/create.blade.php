@@ -1,7 +1,7 @@
 @extends('app')
 @section('content')
 
-<form method="POST" role="form" action="{{ url('product')}}" enctype="multipart/form-data" class="form-horizontal">
+<form method="POST" role="form" action="product" enctype="multipart/form-data" class="form-horizontal">
 {{csrf_field()}}
 				
 				Nombre <input type="text" name="Nombre"  class="in">	<br>

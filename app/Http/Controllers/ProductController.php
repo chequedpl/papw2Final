@@ -13,27 +13,18 @@ class ProductController extends Controller
      */
     public function index()
     {
+        //return view('product.create');
         $producto = \App\Product::All();
-
+        //return $producto;
         return view('product.main')->with(['productos'=> $producto ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $request->Foto1->move('Img', $request->Nombre.$request->Foto1->getClientOriginalName());
@@ -50,46 +41,29 @@ class ProductController extends Controller
             ]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        //
+        //$productos = DB::query('select * from products where id= ?', [ 1 => $id]);
+
+        $productos1 = \App\Product::find($id)->first();
+        //return $productos;
+        //return response()->json($productos);
+        return view('product.ver')->with([ 'edit' => true ,'productos1' => $productos1 ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($id)
     {
-        //
+       
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy($id)
     {
         //

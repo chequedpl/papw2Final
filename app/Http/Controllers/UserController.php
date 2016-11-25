@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -13,7 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('user.create');
+        return view('user.login');
     }
 
     /**
@@ -56,7 +58,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $usuario = \App\User::find($id)->first();
+
+
     }
 
     /**
@@ -91,5 +95,22 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function check(Request $userdata){
+
+        if (Auth::attempt($userdata)) {
+            
+            return 'listo';
+            //show($userdata->idUser);
+        }else{
+            return view('user.login');
+        }
+    }
+
+    public function register(){
+
+        return view('user.create');
+
     }
 }

@@ -27,4 +27,4 @@ Route::resource('comment', 'CommentController',
 	['only' => ['index', 'store', 'show']]);
 
 Route::resource('product', 'ProductController', 
-	['only' => ['index', 'store', 'update', 'destroy', 'show']]);
+	['only' => ['index', 'store', 'update', 'destroy', 'show', 'edit']]);
