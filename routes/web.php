@@ -12,11 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('user.login');
 });
 
 Route::resource('user', 'UserController', 
 	['only' => ['index', 'store', 'update', 'destroy', 'show']]);
+
+
+Route::post('/check', 'UserController@check');
+
+Route::get('/register', 'UserController@register');
 
 Route::resource('comment', 'CommentController', 
 	['only' => ['index', 'store', 'show']]);

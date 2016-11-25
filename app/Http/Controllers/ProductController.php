@@ -13,7 +13,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('product.create');
+        $producto = \App\Product::All();
+
+        return view('product.main')->with(['productos'=> $producto ]);
     }
 
     /**
@@ -23,7 +25,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
