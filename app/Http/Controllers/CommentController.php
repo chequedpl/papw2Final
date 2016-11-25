@@ -41,6 +41,8 @@ class CommentController extends Controller
             'idProduct' => $request->idProducto
 
             ]);
+
+        return redirect()->action('ProductController@show', [$request->idProducto]);
     }
 
     /**

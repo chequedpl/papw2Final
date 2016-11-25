@@ -54,6 +54,8 @@ class ProductController extends Controller
 
         $comentarios1 = \App\Comment::where('idProduct', $id)->get();
 
+        //return $usu->name;
+
         //$comentarios1 = DB::query('select * from comments where idProduct= ?', [ 1 => $id]);
         
         //$comentarios1 = response()->json($comentarios1);

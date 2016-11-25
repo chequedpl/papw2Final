@@ -61,6 +61,17 @@
 </table>
 
 
+
+	<form method="POST" role="form" action="{{ url('comment')}}" enctype="multipart/form-data" class="form-horizontal">
+	{{csrf_field()}}
+
+		Commentario		<input type="text" name="Comentario" class="in"> <br>
+						<input type="text" name="idUsuario" placeholder="idusu">
+						<input type="text" name="idProducto" value="{{ $productos1->id }}">
+						<input type="submit" name="submit" class="in" id="btn" >
+
+	</form>
+
 @else
 
 
