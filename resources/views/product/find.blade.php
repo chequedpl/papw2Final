@@ -44,7 +44,7 @@
 	@foreach($usuarioSe as $u)
 		<tr>
 
-			<td><a href='#'>{{ $u->name }}</a></td>
+			<td><a href="user/{{ $u->id }}">{{ $u->name }}</a></td>
 			<td>{{ $u->email }}</td>
 			<td>
 				<img src="{{ $u->pathavatar }}" width="250" height="150">

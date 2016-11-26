@@ -65,9 +65,9 @@ class UserController extends Controller
     {
         $usuario = \App\User::find($id);
         
-        //return $usuario;
+        $producto = \App\Product::where('idUser', $id)->get();
 
-        return view('user.profile')->with(['usuarios'=> $usuario ]);
+        return view('user.profile')->with(['user'=> $usuario, 'productos' => $producto ]);
     }
 
     /**

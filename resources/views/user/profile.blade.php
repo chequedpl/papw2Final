@@ -64,18 +64,44 @@ img{
 		</div>
 		<div id="tabla2">
 			<tbody>
-			@foreach($user as $u)
-
 				<tr>
-					<td>{{ $u->name }}</td>
-					<td>{{ $u->email }}</td>
+					<td>{{ $user->name }}</td>
+					<td>{{ $user->email }}</td>
 					<td>
-						<img src="{{ $u->pathavatar }}" class="img-responsive" alt="Responsive image">
+						<img src="../{{ $user->pathavatar }}" width="250" height="150">
 					</td>
 				</tr>
-				@endforeach
 			</tbody>
 		</div>
+
+	@endif
+</table>
+
+<table class="table table-hover">
+	@if(isset( $productos))
+
+	<thead>
+		<th>Producto</th>
+		<th>Descripción</th>
+		<th>Precio</th>
+		<th>Foto</th>
+	</thead>
+	<tbody>
+
+	@foreach( $productos as $p)
+		<tr>
+
+			<td><a href="../product/{{ $p->id }}">{{ $p->name }}</a></td>
+			<td>{{ $p->description }}</td>
+			<td>{{ $p->price }}</td>
+			<td>
+				<img src="../{{ $p->photo1 }}" width="250" height="150">
+			</td>
+		</tr>
+		
+		@endforeach
+	</tbody>
+
 
 	@endif
 </table>
