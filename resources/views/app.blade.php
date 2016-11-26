@@ -18,6 +18,8 @@
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
         ]); ?>
+
+        
     </script>
 </head>
 <body>
@@ -40,6 +42,17 @@
                     </a>
                 </div>
 
+                <div class="navbar-search"> 
+                
+                    <form action="{{ url('search') }}">
+
+                        <input type="text" name="searchinfo">
+                        <input type="submit" name="">
+                    
+                    </form>
+
+                </div>
+
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
@@ -51,8 +64,8 @@
                         <!-- Authentication Links -->
                         
                         @if (Auth::guest())
-                            <li><a href="{{ url('/user') }}">Login</a></li>
-                            <li><a href="{{ url('/register') }}">Register</a></li>
+                            <li><a href="{{ url('/user') }}">Entra</a></li>
+                            <li><a href="{{ url('/registro') }}">Registro</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

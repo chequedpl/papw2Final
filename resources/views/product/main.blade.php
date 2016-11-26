@@ -19,7 +19,7 @@
 			<td>{{ $p->description }}</td>
 			<td>{{ $p->price }}</td>
 			<td>
-				<img src="{{ $p->photo1 }}" class="img-responsive" alt="Responsive image">
+				<img src="{{ $p->photo1 }}" width="250" height="150">
 			</td>
 		</tr>
 		

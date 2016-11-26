@@ -126,7 +126,7 @@ class UserController extends Controller
 
     }
 
-    public function register(){
+    public function registro(){
 
         return view('user.create');
 

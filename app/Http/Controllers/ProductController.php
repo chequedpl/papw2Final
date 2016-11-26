@@ -17,7 +17,7 @@ class ProductController extends Controller
         //return view('product.create');
         $producto = \App\Product::All();
         return view('product.main')->with(['productos'=> $producto ]);
-        //return $producto;
+        
     }
 
 
@@ -81,5 +81,18 @@ class ProductController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function search(Request $request)
+    {
+
+        $producto = \App\Product::where('name', 'LIKE', '%'.$request->searchinfo.'%')->get();
+
+        $usuario = \App\User::where('name', 'LIKE', '%'.$request->searchinfo.'%')->get();
+
+        //return response()->json($usuario);
+
+        return view('product.find')->with(['productoSe' => $producto, 'usuarioSe' => $usuario]);
+
     }
 }

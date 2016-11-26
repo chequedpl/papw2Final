@@ -1,0 +1,25 @@
+body {font-family: Raleway,sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #fdfdfd;
+}
+
+.navbar{
+
+	position: relative;
+    min-height: 50px;
+    margin-bottom: 22px;
+    border: 1px solid transparent;
+
+}
+
+.container{
+	    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.container>.navbar-header{
+    margin-right: 0;
+    margin-left: 0;
+}
+

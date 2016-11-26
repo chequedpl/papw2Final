@@ -21,9 +21,11 @@ Route::resource('user', 'UserController',
 
 Route::post('/check', 'UserController@check');
 
-Route::get('/register', 'UserController@register');
+Route::get('/registro', 'UserController@registro');
 
 Route::get('/logout', 'UserController@logout');
+
+Route::get('/search', 'ProductController@search');
 
 
 Route::resource('comment', 'CommentController', 
@@ -31,3 +33,8 @@ Route::resource('comment', 'CommentController',
 
 Route::resource('product', 'ProductController', 
 	['only' => ['index', 'store', 'update', 'destroy', 'show', 'edit']]);
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
