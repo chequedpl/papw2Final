@@ -25,9 +25,9 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-default navbar-static-top">
+
             <div class="container">
                 <div class="navbar-header">
-
                     <!-- Collapsed Hamburger -->
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                         <span class="sr-only">Toggle Navigation</span>
@@ -35,19 +35,20 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-
+                    
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/product') }}">
+                    <a class="navbar-brand" href="{{ url('/product') }}" style="margin-left:3px; margin-top: 15px;">
                         Dragón
                     </a>
+
                 </div>
 
                 <div class="navbar-search"> 
                 
-                    <form action="{{ url('search') }}">
+                    <form action="{{ url('/search') }}" style=" margin-left: 300px; position: relative; ">
 
-                        <input type="text" name="searchinfo">
-                        <input type="submit" name="">
+                        <input type="text" name="searchinfo" style="width: 400px; margin-top: 20px; position: relative; ">
+                        <input type="submit" name="" style="margin-top: 20px; margin-right: 40px; position: relative;" >
                     
                     </form>
 

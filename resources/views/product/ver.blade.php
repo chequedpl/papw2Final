@@ -113,7 +113,7 @@ img{
 
 
 
-	<form method="POST" role="form" action="{{ url('comment')}}" enctype="multipart/form-data" class="form-horizontal">
+	<form method="POST" role="form" action="../comment" >
 	{{csrf_field()}}
 
 		Commentario		<input type="text" name="Comentario" class="in"> <br>

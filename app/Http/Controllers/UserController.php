@@ -106,12 +106,12 @@ class UserController extends Controller
 
     public function check(Request $userdata){
 
-        $usuario = \App\User::where('email', $userdata->Correo)->where('password', $userdata->Contrasenia)->get();
+        $usuario = \App\User::where('email', $userdata->Correo)->where('password', $userdata->Contrasenia)->get()->first();
         
         if(count($usuario) > 0)
         {
-           
-        return view('user.profile')->with(['user' => $usuario, 'logeado' => true]);
+         
+        return view('user.profile')->with(['user' => $usuario]);
 
         }else
         {

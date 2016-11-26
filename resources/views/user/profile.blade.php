@@ -53,20 +53,21 @@ img{
 @section('content')
 
 <table class="table table-hover">
+
 	@if(isset($user))
+
 		<div id="tabla1">
 			<thead>
 				<th>Usuario</th>
 				<th>Email</th>
 				<th>Avatar</th>
-				
 			</thead>
 		</div>
 		<div id="tabla2">
 			<tbody>
 				<tr>
-					<td>{{ $user->name }}</td>
-					<td>{{ $user->email }}</td>
+					<td>{{$user->name}}</td>
+					<td>{{$user->email}}</td>
 					<td>
 						<img src="../{{ $user->pathavatar }}" width="250" height="150">
 					</td>

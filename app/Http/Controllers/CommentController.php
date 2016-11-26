@@ -13,7 +13,7 @@ class CommentController extends Controller
      */
     public function index()
     {
-        return view('comment.create');
+        //
     }
 
     /**
@@ -41,7 +41,8 @@ class CommentController extends Controller
             'idProduct' => $request->idProducto
 
             ]);
-
+        
+        //return 'hecho';
         return redirect()->action('ProductController@show', [$request->idProducto]);
     }
 
