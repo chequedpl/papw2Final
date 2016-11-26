@@ -2,21 +2,26 @@
 @section('content')
 
 <table class="table table-hover">
-	@if(isset($usuarios))
+	@if(isset($user))
 
 	<thead>
-		<th>usuario</th>
-		<th>email</th>
-		<th>avatar</th>
+		<th>Usuario</th>
+		<th>Email</th>
+		<th>Avatar</th>
+		
 	</thead>
 	<tbody>
 
-	@foreach($usuarios as $u)
+	@foreach($user as $u)
+
+	<script type="text/javascript">
+		
+	</script>
 		<tr>
 			<td>{{ $u->name }}</td>
 			<td>{{ $u->email }}</td>
 			<td>
-				<img src="{{ $u->avatar }}" class="img-responsive" alt="Responsive image">
+				<img src="{{ $u->pathavatar }}" class="img-responsive" alt="Responsive image">
 			</td>
 		</tr>
 		@endforeach

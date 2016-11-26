@@ -36,7 +36,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/product') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        Dragón
                     </a>
                 </div>
 
@@ -49,6 +49,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
+                        
                         @if (Auth::guest())
                             <li><a href="{{ url('/user') }}">Login</a></li>
                             <li><a href="{{ url('/register') }}">Register</a></li>
@@ -60,15 +61,10 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="{{ url('/logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                        <a href="{{ url('/product') }}"
+                                            onclick="">
                                             Logout
                                         </a>
-
-                                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
                                     </li>
                                 </ul>
                             </li>

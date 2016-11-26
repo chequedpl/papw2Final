@@ -23,6 +23,9 @@ Route::post('/check', 'UserController@check');
 
 Route::get('/register', 'UserController@register');
 
+Route::get('/logout', 'UserController@logout');
+
+
 Route::resource('comment', 'CommentController', 
 	['only' => ['index', 'store', 'show']]);
 

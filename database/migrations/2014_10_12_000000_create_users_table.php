@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('date');
             $table->string('gender');
             $table->binary('avatar');
+            $table->string('pathavatar');
         });
     }
 

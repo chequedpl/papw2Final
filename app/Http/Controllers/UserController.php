@@ -37,8 +37,10 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $request->Avatar->move('Blob', $request->Nombre.$request->Avatar->getClientOriginalName());
-
+        $request->PathAvatar = 'Blob/'.$request->Nombre.$request->Avatar->getClientOriginalName();
         $request->Avatar =  file_get_contents('Blob/'.$request->Nombre.$request->Avatar->getClientOriginalName());
+
+        
 
         \App\User::create([ 
         'name' => $request->Nombre,
@@ -47,7 +49,10 @@ class UserController extends Controller
         'date' => $request->Calendario,
         'gender' => $request->Genero,
         'avatar' => $request->Avatar,
+        'pathavatar' => $request->PathAvatar,
         ]);
+
+        return redirect()->action('ProductController@index');
     }
 
     /**
@@ -58,10 +63,11 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $usuario = \App\User::find($id)->first();
-        return $usuario;
+        $usuario = \App\User::find($id);
+        
+        //return $usuario;
 
-        //return view('user.profile')->with(['usuarios'=> $usuario ]);
+        return view('user.profile')->with(['usuarios'=> $usuario ]);
     }
 
     /**
@@ -100,13 +106,24 @@ class UserController extends Controller
 
     public function check(Request $userdata){
 
-        if (Auth::attempt($userdata)) {
-            
-            return 'listo';
-            //show($userdata->idUser);
-        }else{
-            return view('user.login');
+        $usuario = \App\User::where('email', $userdata->Correo)->where('password', $userdata->Contrasenia)->get();
+        
+        if(count($usuario) > 0)
+        {
+           
+        return view('user.profile')->with(['user' => $usuario, 'logeado' => true]);
+
+        }else
+        {
+
+            return 'mal';
         }
+        
+        
+    }
+
+    public function logout(){
+
     }
 
     public function register(){
@@ -114,4 +131,5 @@ class UserController extends Controller
         return view('user.create');
 
     }
+
 }
