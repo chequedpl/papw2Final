@@ -45,7 +45,11 @@ class NotaController extends Controller
         $notas = \App\Nota::find($id);
         $comentarios = \App\Comment::where('idNota', $id)->get();
 
-        return view('nota.ver')->with(['edit' => true, 'notas' => $notas, 'comentarios' => $comentarios ]);
+        $usuario = DB::select('select * from users as u, comments as c where u.id = c.idUser and c.idUser = :id', ['id' => $id ]);
+
+        //$usuario = response()->json($usuario);
+
+        return view('nota.ver')->with(['edit' => true, 'notas' => $notas, 'comentarios' => $comentarios, 'usuario' => $usuario ]);
     }
 
     public function edit($id)

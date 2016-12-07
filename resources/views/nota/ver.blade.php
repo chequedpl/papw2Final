@@ -87,25 +87,31 @@ img{
 
 <table class="table table-hover">
 	@if(isset($comentarios))
-
+	@if(isset($usuario))
 	<thead>
 		<th>Commentario</th>
+		<th>Nombre</th>
 		<th>Usuario</th>
 	</thead>
 
 	<tbody>
 
+	@foreach($usuario as $u)
+	<tr>
+			<td><a href="../user/{{ $u->id }}">{{ $u->name }}</a></td>
+			<td><img src="../{{ $u->pathavatar }}" width="250" height="150"></td>
+
 	@foreach($comentarios as $c)
-		<tr>
 
 			<td>{{ $c->comment }}</td>
-			<td>{{ $c->idUser }}</td>
-		</tr>
-		
-		@endforeach
+		</tr>	
+
+	@endforeach
+	@endforeach
+
 	</tbody>
 
-
+	@endif
 	@endif
 </table>
 
