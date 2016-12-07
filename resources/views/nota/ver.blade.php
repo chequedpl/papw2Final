@@ -97,11 +97,12 @@ img{
 	<tbody>
 
 	@foreach($usuario as $u)
+	
+	@foreach($comentarios as $c)
 	<tr>
 			<td><a href="../user/{{ $u->id }}">{{ $u->name }}</a></td>
 			<td><img src="../{{ $u->pathavatar }}" width="250" height="150"></td>
 
-	@foreach($comentarios as $c)
 
 			<td>{{ $c->comment }}</td>
 		</tr>	

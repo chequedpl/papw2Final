@@ -72,11 +72,13 @@ class UserController extends Controller
     public function check(Request $userdata){
 
         $usuario = \App\User::where('email', $userdata->Correo)->where('password', $userdata->Contrasenia)->get()->first();
+
+        $nota = \App\Nota::where('idUser', $usuario->id)->get();
         
         if(count($usuario) > 0)
         {
          
-        return view('user.profile')->with(['user' => $usuario]);
+        return view('user.profile')->with(['user' => $usuario, 'notas' => $nota ]);
 
         }else
         {
