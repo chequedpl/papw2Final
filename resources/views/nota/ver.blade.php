@@ -60,24 +60,22 @@ img{
 	<table class="table table-hover">
 
 
-		@if(isset($productos1))
+		@if(isset($notas))
 
 		<thead>
-			<th>Producto</th>
-			<th>Descripción</th>
-			<th>Precio</th>
 			<th>Foto</th>
+			<th>Descripción</th>
 			<th>idUser</th>
+			<th>idCategoria</th>
 		</thead>
 		<tbody>
 
 			<tr>
 
-				<td>{{ $productos1->name }}</td>
-				<td>{{ $productos1->description }}</td>
-				<td>{{ $productos1->price }}</td>
-				<td><img src="../{{ $productos1->photo1 }}"  width="250" height="150"></td>
-				<td>{{ $productos1->idUser }}</td>
+				<td><img src="../{{ $notas->photo }}"  width="250" height="150"></td>
+				<td>{{ $notas->description }}</td>
+				<td>{{ $notas->idCategorias }}</td>			
+				<td>{{ $notas->idUser }}</td>
 			</tr>
 			
 		</tbody>
@@ -118,7 +116,7 @@ img{
 
 		Commentario		<input type="text" name="Comentario" class="in"> <br>
 						<input type="text" name="idUsuario" placeholder="idusu">
-						<input type="text" hidden="true" name="idProducto" value="{{ $productos1->id }}">
+						<input type="text"  name="idNotas" value="{{ $notas->id }}">
 						<input type="submit" name="submit" class="in" id="btn" >
 
 	</form>

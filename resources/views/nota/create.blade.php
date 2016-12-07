@@ -51,17 +51,17 @@ img{
 }
 </style>
 
-
 @section('content')
 <div id="pro">
-<form method="POST" role="form" action="product" enctype="multipart/form-data" class="form-horizontal">
+<form method="POST" role="form" action="nota" enctype="multipart/form-data" class="form-horizontal">
 {{csrf_field()}}
 				
-				Nombre <input type="text" name="Nombre"  class="in">	<br>
-				Descripcion	<input type="text" name="Descripcion"  class="in">	<br>
-				Precio	<input type="text" name="Precio"  class="in"> <br>
-				Foto	<input type="file" name="Foto1" class="in"> <br>
-				<input type="text" name="idUsuario">
+				Foto	<input type="file" name="Foto" class="in"> <br>
+				Descripcion	<input type="text" name="Descripcion"  class="in">	<br>			
+				
+				<input type="text" name="idUsuario" placeholder="usu" class="in">
+				<input type="text" name="idCategoria" placeholder="cate" class="in">
+
 				<input type="submit" name="submit" class="in" id="btn" >
 
 			</form>

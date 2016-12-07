@@ -22,6 +22,8 @@ class CreateUsersTable extends Migration
             $table->string('date')->nullable();
             $table->string('gender')->nullable();
             $table->binary('avatar')->nullable();
+            $table->binary('cover')->nullable();
+            $table->string('pathcover')->nullable();
             $table->string('pathavatar')->nullable();
         });
 

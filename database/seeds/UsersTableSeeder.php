@@ -17,7 +17,10 @@ class UsersTableSeeder extends Seeder
       	'password' => '12345678',
       	'date' => '1994-10-27',
         'gender' => 'H',
-      	'avatar'=> 'null'
+      	'avatar'=> 'null',
+        'pathcover' => 'null',
+        'cover' => 'null',
+        'pathcover' => 'null'
       	]);
       	
     }

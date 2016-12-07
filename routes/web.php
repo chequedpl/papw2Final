@@ -25,13 +25,13 @@ Route::get('/registro', 'UserController@registro');
 
 Route::get('/logout', 'UserController@logout');
 
-Route::get('/search', 'ProductController@search');
+Route::get('/search', 'NotaController@search');
 
 
 Route::resource('comment', 'CommentController', 
 	['only' => ['index', 'store', 'show']]);
 
-Route::resource('product', 'ProductController', 
+Route::resource('nota', 'NotaController', 
 	['only' => ['index', 'store', 'update', 'destroy', 'show', 'edit']]);
 
 

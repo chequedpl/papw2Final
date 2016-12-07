@@ -38,12 +38,12 @@ class CommentController extends Controller
 
             'comment'=> $request->Comentario,
             'idUser' => $request->idUsuario,
-            'idProduct' => $request->idProducto
+            'idNota' => $request->idNotas
 
             ]);
         
         //return 'hecho';
-        return redirect()->action('ProductController@show', [$request->idProducto]);
+        return redirect()->action('NotaController@show', [$request->idNota]);
     }
 
     /**

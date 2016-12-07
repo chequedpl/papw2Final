@@ -58,6 +58,7 @@ img{
 {{csrf_field()}}
 				
 				Avatar <br>	<input type="file" name="Avatar">
+				Portada <br>	<input type="file" name="Cover">
 				Nombre 	<input type="text" name="Nombre"  class="in">	<br>
 				Email	<input type="email" name="Correo"  class="in">	<br>
 				Password<input type="password" name="Contrasenia"  class="in"> <br>

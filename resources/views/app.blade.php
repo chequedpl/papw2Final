@@ -37,7 +37,7 @@
                     </button>
                     
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/product') }}" style="margin-left:3px; margin-top: 15px;">
+                    <a class="navbar-brand" href="{{ url('/nota') }}" style="margin-left:3px; margin-top: 15px;">
                         Dragón
                     </a>
 
@@ -48,7 +48,7 @@
                     <form action="{{ url('/search') }}" style=" margin-left: 300px; position: relative; ">
 
                         <input type="text" name="searchinfo" style="width: 400px; margin-top: 20px; position: relative; ">
-                        <input type="submit" name="" style="margin-top: 20px; margin-right: 40px; position: relative;" >
+                        <input type="submit" style="margin-top: 20px; margin-right: 40px; position: relative;" >
                     
                     </form>
 

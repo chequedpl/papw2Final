@@ -6,8 +6,11 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'CategoriasTableSeeder' => $baseDir . '/database/seeds/CategoriasTableSeeder.php',
     'CommentsTableSeeder' => $baseDir . '/database/seeds/CommentsTableSeeder.php',
+    'CreateCategoriasTable' => $baseDir . '/database/migrations/2016_12_07_010658_create_categorias_table.php',
     'CreateCommentsTable' => $baseDir . '/database/migrations/2016_11_24_234221_create_comments_table.php',
+    'CreateNotasTable' => $baseDir . '/database/migrations/2016_12_07_010328_create_notas_table.php',
     'CreateProductsTable' => $baseDir . '/database/migrations/2016_11_24_234147_create_products_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
@@ -82,6 +85,7 @@ return array(
     'Hamcrest\\Type\\IsString' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Type/IsString.php',
     'Hamcrest\\Util' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
     'Hamcrest\\Xml\\HasXPath' => $vendorDir . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
+    'NotasTableSeeder' => $baseDir . '/database/seeds/NotasTableSeeder.php',
     'PHPUnit\\Framework\\TestCase' => $vendorDir . '/phpunit/phpunit/src/ForwardCompatibility/TestCase.php',
     'PHPUnit_Exception' => $vendorDir . '/phpunit/phpunit/src/Exception.php',
     'PHPUnit_Extensions_GroupTestSuite' => $vendorDir . '/phpunit/phpunit/src/Extensions/GroupTestSuite.php',

@@ -61,6 +61,7 @@ img{
 				<th>Usuario</th>
 				<th>Email</th>
 				<th>Avatar</th>
+				<th>Cover</th>
 			</thead>
 		</div>
 		<div id="tabla2">
@@ -71,6 +72,9 @@ img{
 					<td>
 						<img src="../{{ $user->pathavatar }}" width="250" height="150">
 					</td>
+					<td>
+						<img src="../{{ $user->pathcover }}" width="250" height="150">
+					</td>
 				</tr>
 			</tbody>
 		</div>
@@ -79,25 +83,25 @@ img{
 </table>
 
 <table class="table table-hover">
-	@if(isset( $productos))
+	@if(isset($notas))
 
 	<thead>
-		<th>Producto</th>
-		<th>Descripción</th>
-		<th>Precio</th>
 		<th>Foto</th>
+		<th>Descripción</th>
+		<th>idUser</th>
+		<th>idCategoria</th>
 	</thead>
 	<tbody>
 
-	@foreach( $productos as $p)
+	@foreach($notas as $n)
 		<tr>
 
-			<td><a href="../product/{{ $p->id }}">{{ $p->name }}</a></td>
-			<td>{{ $p->description }}</td>
-			<td>{{ $p->price }}</td>
 			<td>
-				<img src="../{{ $p->photo1 }}" width="250" height="150">
+				<a href="../nota/{{ $n->id }}"> <img src="../{{ $n->photo }}" width="250" height="150"> </a>
 			</td>
+			<td>{{ $n->description }}</td>
+			<td>{{ $n->idUser }}</td>
+			<td>{{ $n->idCategorias }}</td>					
 		</tr>
 		
 		@endforeach

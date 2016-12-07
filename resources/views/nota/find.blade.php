@@ -2,25 +2,25 @@
 @section('content')
 
 <table class="table table-hover">
-	@if(isset($productoSe))
+	@if(isset($notas))
 
 	<thead>
-		<th>Producto</th>
-		<th>Descripción</th>
-		<th>Precio</th>
 		<th>Foto</th>
+		<th>Descripción</th>
+		<th>idUser</th>
+		<th>idCategoria</th>
 	</thead>
 	<tbody>
 
-	@foreach($productoSe as $p)
+	@foreach($notas as $n)
 		<tr>
 
-			<td><a href="product/{{ $p->id }}">{{ $p->name }}</a></td>
-			<td>{{ $p->description }}</td>
-			<td>{{ $p->price }}</td>
 			<td>
-				<img src="{{ $p->photo1 }}" width="250" height="150">
+				<a href="nota/{{ $n->id }}"> <img src="{{ $n->photo }}" width="250" height="150"> </a>
 			</td>
+			<td>{{ $n->description }}</td>
+			<td>{{ $n->idUser }}</td>
+			<td>{{ $n->idCategorias }}</td>					
 		</tr>
 		
 		@endforeach
@@ -32,7 +32,7 @@
 
 
 <table class="table table-hover">
-	@if(isset($usuarioSe))
+	@if(isset($usuario))
 
 	<thead>
 		<th>Usuarios</th>
@@ -41,7 +41,7 @@
 	</thead>
 	<tbody>
 
-	@foreach($usuarioSe as $u)
+	@foreach($usuario as $u)
 		<tr>
 
 			<td><a href="user/{{ $u->id }}">{{ $u->name }}</a></td>

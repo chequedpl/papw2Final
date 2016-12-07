@@ -9,7 +9,7 @@ class Comment extends Model
     public $timestamps = false;
 
     protected $fillable = [
-	'comment','idUser', 'idProduct'
+	'comment','idUser', 'idNota'
 	];
 
    public function users(){

@@ -278,8 +278,11 @@ class ComposerStaticInitec8bb4e3c15eeb2e9803e87076b53fa2
     );
 
     public static $classMap = array (
+        'CategoriasTableSeeder' => __DIR__ . '/../..' . '/database/seeds/CategoriasTableSeeder.php',
         'CommentsTableSeeder' => __DIR__ . '/../..' . '/database/seeds/CommentsTableSeeder.php',
+        'CreateCategoriasTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_07_010658_create_categorias_table.php',
         'CreateCommentsTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_24_234221_create_comments_table.php',
+        'CreateNotasTable' => __DIR__ . '/../..' . '/database/migrations/2016_12_07_010328_create_notas_table.php',
         'CreateProductsTable' => __DIR__ . '/../..' . '/database/migrations/2016_11_24_234147_create_products_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
@@ -354,6 +357,7 @@ class ComposerStaticInitec8bb4e3c15eeb2e9803e87076b53fa2
         'Hamcrest\\Type\\IsString' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Type/IsString.php',
         'Hamcrest\\Util' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Util.php',
         'Hamcrest\\Xml\\HasXPath' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Xml/HasXPath.php',
+        'NotasTableSeeder' => __DIR__ . '/../..' . '/database/seeds/NotasTableSeeder.php',
         'PHPUnit\\Framework\\TestCase' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/TestCase.php',
         'PHPUnit_Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit_Extensions_GroupTestSuite' => __DIR__ . '/..' . '/phpunit/phpunit/src/Extensions/GroupTestSuite.php',
