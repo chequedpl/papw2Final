@@ -63,10 +63,11 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
-                        
+        
                         @if (Auth::guest())
                             <li><a href="{{ url('/user') }}">Entra</a></li>
-                            <li><a href="{{ url('/registro') }}">Registro</a></li>
+                            <li><a href="{{ url('/registro') }}" onclick="log()">Registro</a></li>
+
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -76,13 +77,19 @@
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
                                         <a href="{{ url('/product') }}"
-                                            onclick="">
+                                            onclick="log()">
                                             Logout
                                         </a>
                                     </li>
                                 </ul>
                             </li>
+
                         @endif
+                        <script type="text/javascript">
+                           function log(){
+                                sessionStorage.clear();
+                            }
+                        </script>
                     </ul>
                 </div>
             </div>

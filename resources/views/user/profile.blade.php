@@ -56,6 +56,11 @@ img{
 
 	@if(isset($user))
 
+	<script type="text/javascript">
+		
+		sessionStorage.setItem('id', <?php echo $user->id ?>)
+	</script>
+
 		<div id="tabla1">
 			<thead>
 				<th>Usuario</th>

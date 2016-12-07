@@ -77,7 +77,8 @@ class UserController extends Controller
         
         if(count($usuario) > 0)
         {
-         
+        
+
         return view('user.profile')->with(['user' => $usuario, 'notas' => $nota ]);
 
         }else
