@@ -86,7 +86,7 @@ img{
 </div>
 
 <table class="table table-hover">
-	@if(isset($comentarios))
+	
 	@if(isset($usuario))
 	<thead>
 		<th>Usuario</th>
@@ -109,7 +109,7 @@ img{
 
 	</tbody>
 
-	@endif
+	
 	@endif
 </table>
 

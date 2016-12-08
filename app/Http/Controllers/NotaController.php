@@ -27,6 +27,17 @@ class NotaController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request , [
+            'Foto'          =>'required',
+            'Descripcion'   =>'required',
+            'idCategoria'   =>'required'
+            
+            ],[
+            'Foto.required' => 'El campo Foto esta vacio',
+            'Descripcion.required' =>  'El campo Descripción esta vacio',
+            'idCategoria.required'=> 'El campo Categoría esta vacio'
+            ]);
+
         $request->Foto->move('Img', $request->idUsuario.$request->Foto->getClientOriginalName());
 
         $request->Foto = 'Img/'.$request->idUsuario.$request->Foto->getClientOriginalName();
@@ -43,13 +54,13 @@ class NotaController extends Controller
     public function show($id)
     {
         $notas = \App\Nota::find($id);
-        $comentarios = \App\Comment::where('idNota', $id)->get();
+       
 
-        $usuario = DB::select('select * from users as u, comments as c where u.id = c.idUser and c.idUser = :id', ['id' => $id ]);
+        $usuario = DB::select('select * from users as u, comments as c where u.id = c.idUser and c.idNota = :id', ['id' => $id ]);
 
         //$usuario = response()->json($usuario);
 
-        return view('nota.ver')->with(['edit' => true, 'notas' => $notas, 'comentarios' => $comentarios, 'usuario' => $usuario ]);
+        return view('nota.ver')->with(['edit' => true, 'notas' => $notas, 'usuario' => $usuario ]);
     }
 
     public function edit($id)

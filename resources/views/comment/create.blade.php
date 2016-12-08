@@ -6,7 +6,7 @@
 
 		Commentario		<input type="text" name="Comentario" class="in"> <br>
 						<input type="text" name="idUsuario" placeholder="idusu">
-						<input type="text" name="idProducto" placeholder="idProdu">
+						<input type="text" name="idNota" placeholder="idProdu">
 						<input type="submit" name="submit" class="in" id="btn" >
 
 	</form>

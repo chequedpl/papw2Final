@@ -21,6 +21,26 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
+
+        $this->validate($request , [
+            'Nombre'        =>'required',
+            'Correo'        =>'required',
+            'Contrasenia'   =>'required',
+            'Calendario'    =>'required',
+            'Genero'        =>'required',
+            'Avatar'        =>'required',
+            'Cover'         =>'required'
+            ],[
+            'Nombre.required' => 'El campo Nombre esta vacio',
+            'Correo.required' =>  'El campo Correo esta vacio',
+            'Contrasenia.required'=> 'El campo Contraseña esta vacio',           
+            'Calendario.required' =>'El campo Calendario esta vacio',
+            'Genero.required' =>   'El campo Genero esta vacio',
+            'Avatar.required' =>   'El campo Avatar esta vacio',
+            'Cover.required' =>    'El campo Cover esta vacio'
+            ]);
+
+
         $request->Avatar->move('Blob', $request->Nombre.$request->Avatar->getClientOriginalName());
         $request->PathAvatar = 'Blob/'.$request->Nombre.$request->Avatar->getClientOriginalName();
         $request->Avatar =  file_get_contents('Blob/'.$request->Nombre.$request->Avatar->getClientOriginalName());
@@ -70,6 +90,14 @@ class UserController extends Controller
     }
 
     public function check(Request $userdata){
+
+         $this->validate($userdata , [
+            'Correo'        =>'required',
+            'Contrasenia'   =>'required'
+            ],[
+            'Correo.required' =>  'El campo Correo esta vacio',
+            'Contrasenia.required'=> 'El campo Contraseña esta vacio'
+            ]);
 
         $usuario = \App\User::where('email', $userdata->Correo)->where('password', $userdata->Contrasenia)->get()->first();
 
