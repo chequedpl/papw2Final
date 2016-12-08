@@ -28,7 +28,7 @@
 
 #btnLogin{
 
-	background-color: #00bcd4;
+	background-color: #000000;
 	opacity: 0.9;
 }
 
@@ -52,7 +52,6 @@ img{
 </style>
 
 @section('content')
-
 <div id="login">
 
 		<form method="POST" role="form" action="{{ url('check')}}" enctype="multipart/form-data" class="form-horizontal">
@@ -62,7 +61,7 @@ img{
 						Email	<input type="email" name="Correo"  class="in">	<br>
 						Password<input type="password" name="Contrasenia"  class="in"> <br>
 			  			
-						<input type="submit" name="submit" class="in" id="btn" >
+						<input type="submit" name="submit" class="in" id="btnLogin" >
 
 		</form>
 </div>
