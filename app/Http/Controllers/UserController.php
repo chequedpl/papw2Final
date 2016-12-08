@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -69,7 +70,7 @@ class UserController extends Controller
     {
         $usuario = \App\User::find($id);
         
-        $nota = \App\Nota::where('idUser', $id)->get();
+        $nota = DB::select('select * from notas as n, users as u where n.idUser = u.id and n.idUser ='. $id);
 
         return view('user.profile')->with(['user'=> $usuario, 'notas' => $nota ]);
     }
@@ -101,7 +102,7 @@ class UserController extends Controller
 
         $usuario = \App\User::where('email', $userdata->Correo)->where('password', $userdata->Contrasenia)->get()->first();
 
-        $nota = \App\Nota::where('idUser', $usuario->id)->get();
+        $nota = DB::select('select * from notas as n, users as u where n.idUser = u.id and n.idUser ='. $usuario->id);
         
         if(count($usuario) > 0)
         {

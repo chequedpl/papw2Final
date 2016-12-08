@@ -18,7 +18,7 @@
 				<a href="nota/{{ $n->id }}"><img src="{{ $n->photo }}" width="250" height="150"> </a>
 			</td>
 			<td>{{ $n->description }}</td>
-			<td>{{ $n->idUser }}</td>
+			<td>{{ $n->name }}</td>
 			
 		</tr>
 		

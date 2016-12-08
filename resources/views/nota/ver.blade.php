@@ -75,7 +75,7 @@ img{
 				<td><img src="../{{ $notas->photo }}"  width="250" height="150"></td>
 				<td>{{ $notas->description }}</td>
 				<td>{{ $notas->idCategorias }}</td>			
-				<td>{{ $notas->idUser }}</td>
+				<td>{{ $notas->name }}</td>
 			</tr>
 			
 		</tbody>
@@ -100,7 +100,7 @@ img{
 	@foreach($usuario as $u)
 	
 	<tr>
-			<td><a href="../user/{{ $u->id }}">{{ $u->name }}</a></td>
+			<td><a href="../user/{{ $u->idUser }}">{{ $u->name }}</a></td>
 			<td><img src="../{{ $u->pathavatar }}" width="250" height="150"></td>
 			<td>{{ $u->comment }}</td>
 		</tr>	

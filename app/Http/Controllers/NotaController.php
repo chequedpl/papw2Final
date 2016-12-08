@@ -15,7 +15,7 @@ class NotaController extends Controller
     public function index()
     {
         //return view('nota.create');
-        $notas = \App\Nota::All();
+        $notas = DB::select('select * from notas as n, users as u where n.id = u.id');
         return view('nota.main')->with(['notas'=> $notas ]);
 
     }
@@ -56,7 +56,8 @@ class NotaController extends Controller
         $notas = \App\Nota::find($id);
        
 
-        $usuario = DB::select('select * from users as u, comments as c where u.id = c.idUser and c.idNota = :id', ['id' => $id ]);
+        $usuario = DB::select('select * from users as u, comments as c where u.id = c.idUser and c.idNota = :id', 
+            ['id' => $id ]);
 
         //$usuario = response()->json($usuario);
 
@@ -80,7 +81,7 @@ class NotaController extends Controller
 
     public function search(Request $request)
     {
-        $notas = \App\Nota::where('description', 'LIKE', '%'.$request->searchinfo.'%')->get();
+        $notas =  DB::select("select * from notas as n, users as u where n.idUser = u.id and n.description LIKE '%".$request->searchinfo."%' ");
 
         $usuario = \App\User::where('name', 'LIKE', '%'.$request->searchinfo.'%')->get();
 

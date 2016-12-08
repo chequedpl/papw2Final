@@ -72,7 +72,7 @@ img{
 		<div id="tabla2">
 			<tbody>
 				<tr>
-					<td>{{$user->name}}</td>
+					<td><a href="../user/{{ $user->id }}">{{$user->name}}</a></td>
 					<td>{{$user->email}}</td>
 					<td>
 						<img src="../{{ $user->pathavatar }}" width="250" height="150">
@@ -105,7 +105,7 @@ img{
 				<a href="../nota/{{ $n->id }}"> <img src="../{{ $n->photo }}" width="250" height="150"> </a>
 			</td>
 			<td>{{ $n->description }}</td>
-			<td>{{ $n->idUser }}</td>
+			<td><a href="../user/{{ $user->id }}">{{ $n->name }}</a></td>
 			<td>{{ $n->idCategorias }}</td>					
 		</tr>
 		
