@@ -27,8 +27,8 @@
 }
 
 #btnLogin{
-
-	background-color: #000000;
+	width: 100%;
+	background-color: #CCCCCC;
 	opacity: 0.9;
 }
 
@@ -70,11 +70,12 @@ img{
 		<form method="POST" role="form" action="{{ url('check')}}" enctype="multipart/form-data" class="form-horizontal">
 		{{csrf_field()}}
 						
-					
-						Email	<input type="email" name="Correo"  class="in">	<br>
-						Password<input type="password" name="Contrasenia"  class="in"> <br>
+						<label for="email" class="col-md-4 control-label">E-Mail Address</label>
+						<input type="email" name="Correo"  class="form-control">	<br>
+						<label for="password" class="col-md-4 control-label">Password</label>
+						<input type="password" name="Contrasenia"  class="form-control"> <br>
 			  			
-						<input type="submit" name="submit" class="in" id="btnLogin" >
+						<input type="submit" name="submit" class="btn btn-primary" id="btnLogin" >
 
 		</form>
 </div>

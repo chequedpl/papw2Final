@@ -53,7 +53,7 @@ class UserController extends Controller
         \App\User::create([ 
         'name' => $request->Nombre,
         'email' => $request->Correo,
-        'password' => $request->Contrasenia,
+        'password' => bcrypt($request->Contrasenia),
         'date' => $request->Calendario,
         'gender' => $request->Genero,
         'avatar' => $request->Avatar,
@@ -117,6 +117,14 @@ class UserController extends Controller
         }
         
         
+    }
+
+    public function getSession(Request $userdata){
+        if($request->session()->has('session_name()')){
+
+        } else {
+
+        }
     }
 
     public function logout(){
