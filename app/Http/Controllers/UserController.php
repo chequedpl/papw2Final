@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -53,7 +54,7 @@ class UserController extends Controller
         \App\User::create([ 
         'name' => $request->Nombre,
         'email' => $request->Correo,
-        'password' => bcrypt($request->Contrasenia),
+        'password' => Hash::make($request->Contrasenia),
         'date' => $request->Calendario,
         'gender' => $request->Genero,
         'avatar' => $request->Avatar,
@@ -100,23 +101,19 @@ class UserController extends Controller
             'Contrasenia.required'=> 'El campo Contraseña esta vacio'
             ]);
 
-        $usuario = \App\User::where('email', $userdata->Correo)->where('password', $userdata->Contrasenia)->get()->first();
-
-        $nota = DB::select('select * from notas as n, users as u where n.idUser = u.id and n.idUser ='. $usuario->id);
         
-        if(count($usuario) > 0)
-        {
-        
+        $usuario = \App\User::where('email', $userdata->Correo)->/*where('password', $userdata->Contrasenia)->*/get()->first();
+        $bCorrectPass = Hash::check($userdata->Contrasenia, $usuario->password);
+        $converted_res = ($bCorrectPass) ? 'true' : 'false';
 
-        return view('user.profile')->with(['user' => $usuario, 'notas' => $nota ]);
-
-        }else
-        {
-
-            return 'mal';
+        if ($bCorrectPass) {
+            $nota = DB::select('select * from notas as n, users as u where n.idUser = u.id and n.idUser ='. $usuario->id);
+            return view('user.profile')->with(['user' => $usuario, 'notas' => $nota]);
+        } else {
+            return 'INCORRECTO';
         }
-        
-        
+
+       // $nota = DB::select('select * from notas as n, users as u where n.idUser = u.id and n.idUser ='. $usuario->id);        
     }
 
     public function getSession(Request $userdata){
