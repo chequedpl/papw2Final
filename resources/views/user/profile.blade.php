@@ -58,7 +58,10 @@ img{
 
 	<script type="text/javascript">
 		
-		sessionStorage.setItem('id', <?php echo $user->id ?>)
+		sessionStorage.setItem('id', <?php echo $user->id ?>);
+		sessionStorage.setItem('name', '<?php echo $user->name ?>');
+		sessionStorage.setItem('path', '<?php echo $user->pathavatar ?>');
+
 	</script>
 
 		<div id="tabla1">
