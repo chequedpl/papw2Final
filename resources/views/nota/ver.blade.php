@@ -65,8 +65,6 @@ img{
 		<thead>
 			<th>Foto</th>
 			<th>Descripción</th>
-			<th>idUser</th>
-			<th>idCategoria</th>
 		</thead>
 		<tbody>
 
@@ -74,8 +72,6 @@ img{
 
 				<td><img src="../{{ $notas->photo }}"  width="250" height="150"></td>
 				<td>{{ $notas->description }}</td>
-				<td>{{ $notas->idCategorias }}</td>			
-				<td>{{ $notas->name }}</td>
 			</tr>
 			
 		</tbody>

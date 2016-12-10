@@ -70,14 +70,14 @@ img{
 @else
 
 <div id="pro">
-<form method="POST" role="form" action="nota" enctype="multipart/form-data" class="form-horizontal">
+<form method="POST" role="form" action="/nota" enctype="multipart/form-data" class="form-horizontal">
 {{csrf_field()}}
 				
 				Foto	<input type="file" name="Foto" class="in"> <br>
 				Descripcion	<input type="text" name="Descripcion"  class="in">	<br>			
 				
 				<input type="text" name="idUsuario" placeholder="usu" class="in" value="{{Auth::user()->id }}" hidden="">
-				<input type="text" name="idCategoria" placeholder="cate" class="in">
+				<input type="text" name="idCategoria" placeholder="cate" class="in" hidden="">
 
 				<input type="submit" name="submit" class="in" id="btn" >
 
