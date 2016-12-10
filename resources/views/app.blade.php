@@ -79,7 +79,7 @@
                                 </a>
                                 <input type="text" name="ids" value="{{Auth::user()->id }}" hidden="">
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="user/{{ Auth::user()->id }}">Perfil</a></li>
+                                    <li><a href="../user/{{ Auth::user()->id }}">Perfil</a></li>
                                     <li>
                                         <a href="{{ url('/nota') }}"
                                             onclick="log()">

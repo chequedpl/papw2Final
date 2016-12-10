@@ -119,8 +119,8 @@ img{
 	{{csrf_field()}}
 
 		Commentario		<input type="text" name="Comentario" class="in"> <br>
-						<input type="text" name="idUsuario" placeholder="idusu">
-						<input type="text"  name="idNotas" value="{{ $notas->id }}">
+						<input type="text" name="idUsuario" value="{{Auth::user()->id }}" hidden="">
+						<input type="text"  name="idNotas" value="{{ $notas->id }}" hidden="">
 						<input type="submit" name="submit" class="in" id="btn" >
 
 	</form>

@@ -71,6 +71,7 @@ img{
 				<th>Avatar</th>
 				<th>Cover</th>
 				<th></th>
+				<th></th>
 			</thead>
 		</div>
 		<div id="tabla2">
@@ -85,6 +86,7 @@ img{
 						<img src="../{{ $user->pathcover }}" width="250" height="150">
 					</td>
 					<td><a href="../nuevo"><input type="button" value="Nueva Publicacion"></a></td>
+					<!-- <td><a href="/edit/{{ $user->id }}"><input type="" name=""></a></td> -->
 				</tr>
 			</tbody>
 		</div>

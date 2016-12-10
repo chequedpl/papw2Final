@@ -15,7 +15,7 @@ class NotaController extends Controller
     public function index()
     {
         //
-        $notas = DB::select('select * from notas as n, users as u where n.id = u.id');
+        $notas = DB::select('select n.id, n.photo, n.description, u.name from notas as n, users as u where n.idUser = u.id');
         //$nota = response()->json($nota);
         //$notas = $nota->paginate(3);
         return view('nota.main')->with(['notas'=> $notas ]);
