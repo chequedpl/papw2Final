@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class UserController extends Controller
 {
@@ -107,6 +108,7 @@ class UserController extends Controller
         $converted_res = ($bCorrectPass) ? 'true' : 'false';
 
         if ($bCorrectPass) {
+            \Auth::login($usuario);
             $nota = DB::select('select * from notas as n, users as u where n.idUser = u.id and n.idUser ='. $usuario->id);
             return view('user.profile')->with(['user' => $usuario, 'notas' => $nota]);
         } else {
