@@ -15,7 +15,7 @@ class NotaController extends Controller
     public function index()
     {
         //
-        $notas = DB::select('select n.id, n.photo, n.description, u.name from notas as n, users as u where n.idUser = u.id and u.activo = 1');
+        $notas = DB::select('select n.id, n.photo, n.description, u.name from notas as n, users as u where n.idUser = u.id order by n.id desc');
         //$nota = response()->json($nota);
         //$notas = $nota->paginate(3);
         return view('nota.main')->with(['notas'=> $notas ]);
@@ -26,13 +26,11 @@ class NotaController extends Controller
     {
         $this->validate($request , [
             'Foto'          =>'required',
-            'Descripcion'   =>'required',
-            'idCategoria'   =>'required'
+            'Descripcion'   =>'required'
             
             ],[
             'Foto.required' => 'El campo Foto esta vacio',
-            'Descripcion.required' =>  'El campo Descripción esta vacio',
-            'idCategoria.required'=> 'El campo Categoría esta vacio'
+            'Descripcion.required' =>  'El campo Descripción esta vacio'
             ]);
 
         $request->Foto->move('Img', $request->idUsuario.$request->Foto->getClientOriginalName());
@@ -46,6 +44,8 @@ class NotaController extends Controller
             'idCategorias' => 1,
             'idUser' => $request->idUsuario,
             ]);
+
+        return redirect()->action('NotaController@index');
     }
 
     public function show($id)

@@ -73,7 +73,7 @@ class UserController extends Controller
     {
         $usuario = \App\User::find($id);
         
-        $nota = DB::select('select * from notas as n, users as u where n.idUser = u.id and n.idUser ='. $id);
+        $nota = DB::select('select n.id, n.photo, n.description, u.name from notas as n, users as u where n.idUser = u.id and n.idUser ='. $id);
 
         return view('user.profile')->with(['user'=> $usuario, 'notas' => $nota ]);
     }

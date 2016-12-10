@@ -71,7 +71,6 @@ img{
 				<th>Avatar</th>
 				<th>Cover</th>
 				<th></th>
-				<th></th>
 			</thead>
 		</div>
 		<div id="tabla2">
@@ -101,7 +100,6 @@ img{
 		<th>Foto</th>
 		<th>Descripción</th>
 		<th>idUser</th>
-		<th>idCategoria</th>
 	</thead>
 	<tbody>
 
@@ -112,8 +110,7 @@ img{
 				<a href="../nota/{{ $n->id }}"> <img src="../{{ $n->photo }}" width="250" height="150"> </a>
 			</td>
 			<td>{{ $n->description }}</td>
-			<td><a href="../user/{{ $user->id }}">{{ $n->name }}</a></td>
-			<td>{{ $n->idCategorias }}</td>					
+			<td><a href="../user/{{ $user->id }}">{{ $n->name }}</a></td>			
 		</tr>
 		
 		@endforeach
