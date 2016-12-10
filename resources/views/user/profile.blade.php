@@ -86,7 +86,7 @@ img{
 						<img src="../{{ $user->pathcover }}" width="250" height="150">
 					</td>
 					<td><a href="../nuevo"><input type="button" value="Nueva Publicacion"></a></td>
-					<!-- <td><a href="/edit/{{ $user->id }}"><input type="" name=""></a></td> -->
+					<!-- <td><a href="../editar/{{$user->id}}"><input type="button" name=""></a></td> -->
 				</tr>
 			</tbody>
 		</div>

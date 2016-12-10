@@ -62,6 +62,7 @@ class UserController extends Controller
         'pathavatar' => $request->PathAvatar,
         'cover' => $request->Cover,
         'pathcover' => $request->PathCover,
+        'activo' => 1,
         ]);
 
         return redirect()->action('NotaController@index');
@@ -77,20 +78,13 @@ class UserController extends Controller
         return view('user.profile')->with(['user'=> $usuario, 'notas' => $nota ]);
     }
 
-    public function edit($id)
-    {
-        //
-    }
-
     public function update(Request $request, $id)
     {
-        //
+        
+
+        return redirect()->action('UserController@show', [$id]);
     }
 
-    public function destroy($id)
-    {
-        //
-    }
 
     public function check(Request $userdata){
 
@@ -112,7 +106,7 @@ class UserController extends Controller
             $nota = DB::select('select * from notas as n, users as u where n.idUser = u.id and n.idUser ='. $usuario->id);
             return view('user.profile')->with(['user' => $usuario, 'notas' => $nota]);
         } else {
-            return 'INCORRECTO';
+            return view('user.login');
         }
 
        // $nota = DB::select('select * from notas as n, users as u where n.idUser = u.id and n.idUser ='. $usuario->id);        
@@ -128,12 +122,29 @@ class UserController extends Controller
 
     public function logout(){
 
+        \Auth::logout();
     }
 
     public function registro(){
 
         return view('user.create');
 
+    }
+
+    public function editar($id)
+    {
+        $usuario = \App\User::find($id);
+
+        return view('user.edit')->with(['user' => $usuario]);
+    }
+
+    public function borrar($id)
+    {
+        //$user = \App\User::find($id)
+
+        $user = \App\User::where('id',$id)->update(array('activo'=>0));
+
+        return view('user.login');
     }
 
 }

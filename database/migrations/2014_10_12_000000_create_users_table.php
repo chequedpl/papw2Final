@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->binary('cover')->nullable();
             $table->string('pathcover')->nullable();
             $table->string('pathavatar')->nullable();
+            $table->integer('activo')->nullable();
         });
 
 

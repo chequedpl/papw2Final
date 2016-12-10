@@ -20,7 +20,8 @@ class UsersTableSeeder extends Seeder
       	'avatar'=> 'null',
         'pathcover' => 'null',
         'cover' => 'null',
-        'pathcover' => 'null'
+        'pathcover' => 'null',
+        'activo' => '1'
       	]);
       	
     }

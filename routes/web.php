@@ -16,24 +16,28 @@ Route::get('/', function () {
 });
 
 Route::resource('user', 'UserController', 
-	['only' => ['index', 'store', 'update', 'destroy', 'show']]);
+	['only' => ['index', 'store', 'update', 'show']]);
 
 
 Route::post('/check', 'UserController@check');
 
 Route::get('/registro', 'UserController@registro');
 
-Route::get('/logout', 'UserController@logout');
+Route::post('/log', 'UserController@logout');
 
 Route::get('/search', 'NotaController@search');
 
+Route::get('/borrar/{id}', 'UserController@borrar');
+
 Route::get('/nuevo', 'NotaController@nuevo');
+
+Route::get('/editar/{id}', 'UserController@editar');
 
 Route::resource('comment', 'CommentController', 
 	['only' => ['index', 'store', 'show']]);
 
 Route::resource('nota', 'NotaController', 
-	['only' => ['index', 'store', 'update', 'destroy', 'show', 'edit']]);
+	['only' => ['index', 'store','show']]);
 
 
 Auth::routes();

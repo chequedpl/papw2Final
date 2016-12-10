@@ -81,10 +81,21 @@
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="../user/{{ Auth::user()->id }}">Perfil</a></li>
                                     <li>
-                                        <a href="{{ url('/nota') }}"
-                                            onclick="log()">
+                                          <a href="{{ url('/log') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
                                             Logout
                                         </a>
+
+                                        <form id="logout-form" action="{{ url('/log') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                        
+                                    </li>
+                                    <li>
+
+                                    <a href="../borrar/{{Auth::user()->id}}"> 
+                                            Eliminar Cuenta </a>
                                     </li>
                                 </ul>
                             </li>

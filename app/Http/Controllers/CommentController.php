@@ -45,7 +45,6 @@ class CommentController extends Controller
 
             ]);
         
-        //return 'hecho';
         return redirect()->action('NotaController@show', [$request->idNota]);
     }
 
