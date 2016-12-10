@@ -14,15 +14,17 @@ class NotaController extends Controller
      */
     public function index()
     {
-        //return view('nota.create');
+        //
         $notas = DB::select('select * from notas as n, users as u where n.id = u.id');
+        //$nota = response()->json($nota);
+        //$notas = $nota->paginate(3);
         return view('nota.main')->with(['notas'=> $notas ]);
 
     }
 
     public function create()
     {
-        //
+        
     }
 
     public function store(Request $request)
@@ -88,5 +90,10 @@ class NotaController extends Controller
         //return response()->json($usuario);
 
         return view('nota.find')->with(['notas' => $notas, 'usuario' => $usuario]);
+    }
+
+    public function nuevo()
+    {
+        return view('nota.create');
     }
 }

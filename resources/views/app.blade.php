@@ -66,31 +66,29 @@
                         
                         <!-- aqui es donde no se que hacer si no hay session va esto -->
                         @if (Auth::guest())
-                            <li><a href="{{ url('/user') }}">Entra</a></li>
-                            <li><a href="{{ url('/registro') }}" onclick="log()">Registro</a></li>
+                            <div id="noLog">
+                                <li><a href="{{ url('/user') }}">Entra</a></li>
+                                <li><a href="{{ url('/registro') }}" onclick="log()">Registro</a></li>
+                            </div>
                         <!-- si si hay session va aqui -->
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
+                                    {{ Auth::user()->name }}  <span class="caret"></span>
 
+                                </a>
+                                <input type="text" name="ids" value="{{Auth::user()->id }}" hidden="">
                                 <ul class="dropdown-menu" role="menu">
+                                    <li><a href="user/{{ Auth::user()->id }}">Perfil</a></li>
                                     <li>
-                                        <a href="{{ url('/product') }}"
+                                        <a href="{{ url('/nota') }}"
                                             onclick="log()">
                                             Logout
                                         </a>
                                     </li>
                                 </ul>
                             </li>
-
                         @endif
-                        <script type="text/javascript">
-                           function log(){
-                                sessionStorage.clear();
-                            }
-                        </script>
                     </ul>
                 </div>
             </div>

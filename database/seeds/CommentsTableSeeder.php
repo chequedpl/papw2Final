@@ -12,10 +12,21 @@ class CommentsTableSeeder extends Seeder
     public function run()
     {
         DB::table('comments')->insert([
-      	'idUser'=>'1',
-      	'idProduct' => '1',
-      	'comment' => 'Tiene envios para Monterrey?'
+      	'idUser'=>'2',
+      	'idNota' => '1',
+      	'comment' => 'GPI'
       	]);
       	
+        DB::table('comments')->insert([
+        'idUser'=>'1',
+        'idNota' => '1',
+        'comment' => 'cuando quieras'
+        ]);
+
+        DB::table('comments')->insert([
+        'idUser'=>'2',
+        'idNota' => '1',
+        'comment' => 'ahorita caigo'
+        ]);
     }
 }

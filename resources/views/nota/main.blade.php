@@ -23,6 +23,7 @@
 		</tr>
 		
 		@endforeach
+		
 	</tbody>
 
 

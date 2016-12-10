@@ -27,6 +27,7 @@ Route::get('/logout', 'UserController@logout');
 
 Route::get('/search', 'NotaController@search');
 
+Route::get('/nuevo', 'NotaController@nuevo');
 
 Route::resource('comment', 'CommentController', 
 	['only' => ['index', 'store', 'show']]);

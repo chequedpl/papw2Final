@@ -11,6 +11,13 @@ class NotasTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('notas')->insert([
+      	'photo'=>'Img/1perfil2.jpg',
+      	'description' => 'La vida es bella',
+      	'idUser' => '1',
+      	'idCategorias' => '5'
+      	]);
+
+
     }
 }
